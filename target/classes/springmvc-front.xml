@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:cache="http://www.springframework.org/schema/cache"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:mvc="http://www.springframework.org/schema/mvc"
+        xmlns:tx="http://www.springframework.org/schema/tx"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+        http://www.springframework.org/schema/cache
+        http://www.springframework.org/schema/cache/spring-cache.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+   <!-- springmvc扫包 @Controller @Service @Component... -->
+    <context:component-scan base-package="com.gaochao" use-default-filters="false">
+       <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"></context:include-filter>
+    </context:component-scan>
+
+    <context:annotation-config></context:annotation-config>
+   <!--配置全局转换器-->
+   <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+       <property name="webBindingInitializer">
+           <bean class="com.gaochao.web.CustomDateEdtor"></bean>
+       </property>
+   </bean>
+
+    <!--配置spring-mvc和支持上传图片-->
+    <bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!--最大上传尺寸 1M-->
+        <property name="maxUploadSize" value="1048576"></property>
+    </bean>
+   <!--视图 -->
+   <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+      <property name="prefix" value="/WEB-INF/front_page/"></property>
+      <property name="suffix" value=".html"></property>
+   </bean>
+</beans>
