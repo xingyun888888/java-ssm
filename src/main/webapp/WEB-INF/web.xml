@@ -31,6 +31,34 @@
     <filter-name>encoding</filter-name>
     <url-pattern>*.html</url-pattern>
   </filter-mapping>
+
+
+  <!--设置不拦截静态资源的访问-->
+  <!--<servlet-mapping>-->
+    <!--<servlet-name>default</servlet-name>-->
+    <!--<url-pattern>*.css</url-pattern>-->
+  <!--</servlet-mapping>-->
+  <!--<servlet-mapping>-->
+    <!--<servlet-name>default</servlet-name>-->
+    <!--<url-pattern>*.gif</url-pattern>-->
+  <!--</servlet-mapping>-->
+  <!--<servlet-mapping>-->
+    <!--<servlet-name>default</servlet-name>-->
+    <!--<url-pattern>*.jpg</url-pattern>-->
+  <!--</servlet-mapping>-->
+  <!--<servlet-mapping>-->
+    <!--<servlet-name>default</servlet-name>-->
+    <!--<url-pattern>*.js</url-pattern>-->
+  <!--</servlet-mapping>-->
+  <!--<servlet-mapping>-->
+    <!--<servlet-name>default</servlet-name>-->
+    <!--<url-pattern>*.html</url-pattern>-->
+  <!--</servlet-mapping>-->
+
+
+
+
+
   <!--springmvc 配置前台-->
   <servlet>
     <servlet-name>front</servlet-name>
@@ -39,6 +67,7 @@
       <param-name>contextConfigLocation</param-name>
       <param-value>classpath:springmvc-front.xml</param-value>
     </init-param>
+    <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
     <servlet-name>front</servlet-name>
