@@ -11,6 +11,18 @@
     <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
 </head>
 <body>
+    <ul>
+        <#if list!=null>
+            <#list list as item>
+                <li>${item.name}</li>
+            </#list>
+        </#if>
+        <#if camera!=null>
+            ${camera.name}
+        </#if>
+    </ul>
+
+
   <div>
       <input type="file" onchange="uploadPic(event)">上传图片
   </div>

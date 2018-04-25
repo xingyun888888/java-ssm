@@ -22,8 +22,25 @@
    <!--mybatis sessionFactory配置-->
    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
       <property name="dataSource" ref="dataSource"></property>
-      <property name="mapperLocations" value="classpath*:com/gaochao/dao/*.xml"></property>
+      <property name="mapperLocations" value="classpath:com/gaochao/dao/*.xml"></property>
       <property name="typeAliasesPackage" value="com.gaochao.bean"></property>
+      <property name="plugins">
+         <array>
+            <bean class="com.github.pagehelper.PageHelper">
+               <property name="properties">
+                  <value>
+                     dialect=mysql
+                     offsetAsPageNum=true
+                     rowBoundsWithCount=true
+                     pageSizeZero=true
+                     reasonable=false
+                     supportMethodsArguments=true
+                     returnPageInfo=check
+                  </value>
+               </property>
+            </bean>
+         </array>
+      </property>
    </bean>
 
    <!--扫包-->

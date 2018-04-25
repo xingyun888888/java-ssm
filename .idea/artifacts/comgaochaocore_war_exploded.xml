@@ -7,8 +7,14 @@
           <element id="module-output" name="comgaochaocore" />
         </element>
         <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: opensymphony:oscache:2.4" />
+          <element id="library" level="project" name="Maven: javax.jms:jms:1.1" />
+          <element id="library" level="project" name="Maven: org.freemarker:freemarker:2.3.23" />
           <element id="library" level="project" name="Maven: org.apache.httpcomponents:httpclient:4.2.1" />
           <element id="library" level="project" name="Maven: commons-httpclient:commons-httpclient:3.1" />
+          <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.4" />
+          <element id="library" level="project" name="Maven: com.github.pagehelper:pagehelper:3.4.2" />
+          <element id="library" level="project" name="Maven: com.github.jsqlparser:jsqlparser:0.9.1" />
           <element id="library" level="project" name="Maven: aopalliance:aopalliance:1.0" />
           <element id="library" level="project" name="Maven: org.ow2.asm:asm:5.0.4" />
           <element id="library" level="project" name="Maven: org.aspectj:aspectjrt:1.6.11" />
@@ -106,6 +112,7 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-web:4.3.5.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:4.3.5.RELEASE" />
           <element id="library" level="project" name="Maven: com.101tec:zkclient:0.4" />
+          <element id="library" level="project" name="Maven: org.slf4j:slf4j-log4j12:1.6.1" />
           <element id="library" level="project" name="Maven: com.googlecode.json-simple:json-simple:1.1.1" />
           <element id="library" level="project" name="Maven: com.google.code.gson:gson:2.8.2" />
           <element id="library" level="project" name="Maven: junit:junit:4.12" />
@@ -115,7 +122,6 @@
           <element id="library" level="project" name="Maven: com.github.mpusher:mpush-netty:0.8.0" />
           <element id="library" level="project" name="Maven: com.github.mpusher:mpush-tools:0.8.0" />
           <element id="library" level="project" name="Maven: com.github.mpusher:mpush-api:0.8.0" />
-          <element id="library" level="project" name="Maven: org.apache.commons:commons-lang3:3.6" />
           <element id="library" level="project" name="Maven: com.typesafe:config:1.3.1" />
           <element id="library" level="project" name="Maven: org.slf4j:log4j-over-slf4j:1.7.25" />
           <element id="library" level="project" name="Maven: io.netty:netty-transport:4.1.8.Final" />

@@ -2,19 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.gaochao.dao.BrandDao">
-
     <resultMap id="Brand" type="brand">
-        <result column="id" property="id"></result>
-        <result column="name" property="name"></result>
-        <result column="description" property="description"></result>
-        <result column="isDisplay" property="isDisplay"></result>
     </resultMap>
-
-   <select id="" parameterType="Brand" resultMap="brand">
-     <where>
-         <if test="isDisplay != null"></if>
-     </where>
-   </select>
 </mapper>
 
 
