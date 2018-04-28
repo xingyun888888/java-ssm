@@ -6,7 +6,7 @@
         xmlns:context="http://www.springframework.org/schema/context"
         xmlns:mvc="http://www.springframework.org/schema/mvc"
         xmlns:tx="http://www.springframework.org/schema/tx"
-        xsi:schemaLocation="http://www.springframework.org/schema/beans
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/aop
         http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
@@ -51,14 +51,14 @@
     </bean>
 
 
-    <mvc:interceptors>
-        <mvc:interceptor>
-            <mvc:mapping path="/**"/>
-            <bean class="com.gaochao.interceptor.SpringmvcInterceptor"></bean>
-        </mvc:interceptor>
-    </mvc:interceptors>
+    <!--<mvc:interceptors>-->
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/**"/>-->
+            <!--<bean class="com.gaochao.interceptor.SpringmvcInterceptor"></bean>-->
+        <!--</mvc:interceptor>-->
+    <!--</mvc:interceptors>-->
 
-
+   <import resource="config/property.xml"></import>
    <!--适配器-->
     <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"></bean>
    <!--视图 -->
@@ -92,4 +92,8 @@
             </props>
         </property>
     </bean>
+
+
+    <!--开启aop-->
+    <aop:config proxy-target-class="true"></aop:config>
 </beans>

@@ -19,12 +19,12 @@ public class GlobalExceptionHandler {
 //    }
 
 
-    @ExceptionHandler(Exception.class)
-    @ResponseBody
-    Map handleBusinessException(BusinessException e){
-        System.out.println("已经处理到这里了");
-        Map map = new HashMap();
-        map.put("message",e.getMessage());
-        return map;
-    }
+//    @ExceptionHandler(RuntimeException.class)
+//    @ResponseBody
+//    Map handleBusinessException(RuntimeException e){
+//        System.out.println("已经处理到这里了");
+//        Map map = new HashMap();
+//        map.put("message",e.getMessage());
+//        return map;
+//    }
 }

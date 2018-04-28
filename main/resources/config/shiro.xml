@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:cache="http://www.springframework.org/schema/cache"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:mvc="http://www.springframework.org/schema/mvc"
+        xmlns:tx="http://www.springframework.org/schema/tx"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+        http://www.springframework.org/schema/cache
+        http://www.springframework.org/schema/cache/spring-cache.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+   <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+      <property name="securityManager" ref="securityManager"></property>
+      <property name="loginUrl" value="/login.do"></property>
+      <property name="successUrl" value="/control/index.do"></property>
+      <property name="unauthorizedUrl" value="/403.html"></property>
+      <property name="filterChainDefinitions">
+         <value>
+            /login.do = anon
+            /** = authc
+         </value>
+      </property>
+      <property name="filters">
+            <map>
+               <entry key="rolesOr" value-ref="rolesOrFilter"></entry>
+            </map>
+      </property>
+   </bean>
+
+   <bean id="rolesOrFilter" class="com.gaochao.shiro.filter.RolesOrFilter"></bean>
+
+
+   <!--创建SecurityManager对象-->
+   <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+      <property name="realm" ref="customRealm"></property>
+      <property name="sessionManager"  ref="customSessionManager"></property>
+   </bean>
+
+   <!--创建自定义Realm-->
+   <bean class="com.gaochao.shiro.realm.CustomRealm" id="customRealm">
+      <property name="credentialsMatcher" ref="credentialsMatcher"></property>
+   </bean>
+
+
+   <!--加密管理器对象-->
+   <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher" id="credentialsMatcher">
+      <property name="hashAlgorithmName" value="md5"></property>
+      <property name="hashIterations" value="1"></property>
+   </bean>
+
+
+   <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"></bean>
+   <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+      <property name="securityManager" ref="securityManager"></property>
+   </bean>
+
+   <bean class="com.gaochao.shiro.session.CustomSessionManager" id="customSessionManager">
+      <property name="sessionDAO" ref="redisSessionDao"></property>
+   </bean>
+   <bean id="redisSessionDao" class="com.gaochao.shiro.session.RedisSessionDao" ></bean>
+
+
+
+</beans>

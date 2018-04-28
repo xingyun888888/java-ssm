@@ -41,6 +41,11 @@
             </bean>
          </array>
       </property>
+      <property name="configurationProperties" >
+         <value>
+
+         </value>
+      </property>
    </bean>
 
    <!--扫包-->

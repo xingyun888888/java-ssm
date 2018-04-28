@@ -21,9 +21,9 @@
 
    <!--c3p0 如果连接断了 可以自动重连 -->
    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-      <property name="driverClass" value="${driverClass}"></property>
-      <property name="jdbcUrl" value="${jdbcUrl}"></property>
-      <property name="user" value="${user}"></property>
-      <property name="password" value="${password}"></property>
+      <property name="driverClass" value="${jdbc.driver}"></property>
+      <property name="jdbcUrl" value="${jdbc.url}"></property>
+      <property name="user" value="${jdbc.user}"></property>
+      <property name="password" value="${jdbc.password}"></property>
    </bean>
 </beans>

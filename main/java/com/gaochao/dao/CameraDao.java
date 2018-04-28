@@ -12,4 +12,5 @@ import java.util.List;
 public interface CameraDao {
     List<Camera> getList();
     Camera getCameraById(int id);
+    int updateCameraById(int id,String name);
 }

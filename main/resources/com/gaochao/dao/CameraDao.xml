@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.gaochao.dao.CameraDao">
-   <select id="getList" resultType="camera">
-       select * from camera
+   <resultMap id="getAllCamera" type="camera">
+     <id property="id" column="id"></id>
+     <result property="name" column="name"></result>
+     <result property="type" column="type"></result>
+     <association property="analyser" javaType="analyser">
+         <id property="id" column="id"></id>
+         <result property="name" column="name"></result>
+     </association>
+   </resultMap>
+   <select id="getList" resultMap="getAllCamera">
+       select camera.id,camera.name,camera.type,analyser.id,analyser.name from camera,analyser WHERE analyser.id = camera.analyserId
    </select>
    <select id="getCameraById" parameterType="int" resultType="camera">
        select * from camera
@@ -10,6 +19,15 @@
            id = #{id}
        </where>
    </select>
+   <update id="updateCameraById" >
+       UPDATE camera
+       <set>
+          name = #{1}
+       </set>
+       <where>
+           id = #{0}
+       </where>
+   </update>
 </mapper>
 
 

@@ -20,7 +20,19 @@ public class User implements Serializable{
     }
 
     private String name;
+    private String role;
 
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    public User(){
+
+    }
     public User(String name, String password) {
         this.name = name;
         this.password = password;

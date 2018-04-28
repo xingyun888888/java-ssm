@@ -1,6 +1,7 @@
 package com.gaochao.controller;
 
 import com.gaochao.bean.Camera;
+import com.gaochao.redis.RedisCacheManager;
 import com.gaochao.service.CameraServiceImpl;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
@@ -8,9 +9,11 @@ import com.github.pagehelper.PageInfo;
 import io.netty.util.internal.StringUtil;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -31,17 +34,17 @@ public class ProductController {
    @Autowired
    private CameraServiceImpl cameraServiceImpl;
 
+
    @RequestMapping(value="/control/index.do")
    @ResponseBody
     public PageInfo<Camera> index(ModelMap model){
-       PageHelper.startPage(1,3);
 
+       PageHelper.startPage(1,3);
        String a =  "这是我的第一个项目";
        StringUtils.isNotBlank(a);
        Map map  =  new HashMap();
        List<Camera>  list = cameraServiceImpl.getList();
-       PageInfo<Camera> pageInfo = new PageInfo<>(list);
-
+       PageInfo<Camera> pageInfo = new PageInfo<Camera>(list);
        return pageInfo;
 //       model.addAttribute("list",list);
 //       return "index";
@@ -52,6 +55,18 @@ public class ProductController {
        Camera camera = cameraServiceImpl.getCameraById(id);
        model.addAttribute("camera",camera);
        return "index";
+   }
+
+
+   @RequestMapping(value="/control/update.do")
+   @ResponseBody
+   public Map update(ModelMap model, @RequestParam(required = false) int  id, @RequestParam(required = false) String name){
+
+       cameraServiceImpl.updateCameraById(id,name);
+
+       Map map = new HashMap();
+       map.put("message","数据更新成功");
+       return map;
    }
 
 

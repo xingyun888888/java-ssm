@@ -10,5 +10,5 @@ import java.util.List;
  */
 @Component
 public interface BrandDao {
-    public List<Brand> getBrandList(Brand brand);
+    List<Brand> getBrandList(Brand brand);
 }

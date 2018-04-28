@@ -27,7 +27,10 @@
          <list>
             <!--jdbc配置-->
            <value>classpath:properties/jdbc.properties</value>
-            <!--memcache配置-->
+           <value>classpath:properties/file.properties</value>
+           <!--memcache配置-->
+             <!--redis配置-->
+           <value>classpath:properties/redis.properties</value>
          </list>
       </property>
    </bean>

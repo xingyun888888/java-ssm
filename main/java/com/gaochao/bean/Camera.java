@@ -2,11 +2,14 @@ package com.gaochao.bean;
 
 import org.springframework.stereotype.Component;
 
+import java.io.Serializable;
+
 /**
  * Created by smileMAC on 18/4/25.
  */
 @Component
-public class Camera {
+public class Camera implements Serializable{
+
     private int id;				//id
     private String type;		// camera type
     private String name;		// camera name
@@ -36,8 +39,16 @@ public class Camera {
     private String areaName;	// corresponding area name
     private String distictUrl;	//corresponding distict  address
     private String img_url;		//corresponding img address
-    public Camera() {
+    private Analyser analyser;
+
+    public Analyser getAnalyser() {
+        return analyser;
     }
+
+    public void setAnalyser(Analyser analyser) {
+        this.analyser = analyser;
+    }
+
     public int getId() {
         return id;
     }
@@ -213,4 +224,40 @@ public class Camera {
         this.img_url = img_url;
     }
 
+    Camera(){
+
+    }
+
+    public Camera(int id, String type, String name, String serialNum, String ip, int port, String mediaIP, int mediaPort, String direction, int analyserID, int zoneID, int strategyID, int doorID, String user, String pwd, int rtspPort, String rtspPath, String camInfo, int camMapX, int camMapY, int camState, int streamType, int districtID, String districtName, String area, int areaID, String areaName, String distictUrl, String img_url, Analyser analyser) {
+        this.id = id;
+        this.type = type;
+        this.name = name;
+        this.serialNum = serialNum;
+        this.ip = ip;
+        this.port = port;
+        this.mediaIP = mediaIP;
+        this.mediaPort = mediaPort;
+        this.direction = direction;
+        this.analyserID = analyserID;
+        this.zoneID = zoneID;
+        this.strategyID = strategyID;
+        this.doorID = doorID;
+        this.user = user;
+        this.pwd = pwd;
+        this.rtspPort = rtspPort;
+        this.rtspPath = rtspPath;
+        this.camInfo = camInfo;
+        this.camMapX = camMapX;
+        this.camMapY = camMapY;
+        this.camState = camState;
+        this.streamType = streamType;
+        this.districtID = districtID;
+        this.districtName = districtName;
+        this.area = area;
+        this.areaID = areaID;
+        this.areaName = areaName;
+        this.distictUrl = distictUrl;
+        this.img_url = img_url;
+        this.analyser = analyser;
+    }
 }

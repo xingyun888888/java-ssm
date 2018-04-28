@@ -22,9 +22,5 @@
         <!--<bean id="configuration" class="freemarker.template.Configuration"></bean>-->
    <!--<bean id="freeMarkerConfigurer" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer"></bean>-->
 
-   <bean id="brandServceImpl2" class="com.gaochao.service.BrandServceImpl">
-           <!--<property name="freeMarkerConfigurer" ref="freeMarkerConfigurer" ></property>-->
-   </bean>
-
    <!--<context:annotation-config></context:annotation-config>-->
 </beans>
