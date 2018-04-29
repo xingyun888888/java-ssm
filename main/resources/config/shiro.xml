@@ -27,6 +27,8 @@
       <property name="filterChainDefinitions">
          <value>
             /login.do = anon
+            /control/index.do = user
+            /admin/** = anon
             /** = authc
          </value>
       </property>
@@ -44,7 +46,8 @@
    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
       <property name="realm" ref="customRealm"></property>
       <property name="sessionManager"  ref="customSessionManager"></property>
-   </bean>
+      <property name="rememberMeManager" ref="cookieRememberMeManager"></property>
+    </bean>
 
    <!--创建自定义Realm-->
    <bean class="com.gaochao.shiro.realm.CustomRealm" id="customRealm">
@@ -66,9 +69,19 @@
 
    <bean class="com.gaochao.shiro.session.CustomSessionManager" id="customSessionManager">
       <property name="sessionDAO" ref="redisSessionDao"></property>
+      <property name="globalSessionTimeout" value="100000"></property>
    </bean>
    <bean id="redisSessionDao" class="com.gaochao.shiro.session.RedisSessionDao" ></bean>
 
 
+   <!--自动登录功能实现-->
+   <bean class="org.apache.shiro.web.mgt.CookieRememberMeManager" id="cookieRememberMeManager">
+      <property name="cookie" ref="cookie"></property>
+   </bean>
 
+
+   <bean class="org.apache.shiro.web.servlet.SimpleCookie" id="cookie">
+      <constructor-arg value="remembMe"></constructor-arg>
+      <property name="maxAge" value="60"></property>
+   </bean>
 </beans>

@@ -19,4 +19,82 @@
         http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 
+    <!-- springmvc扫包 @Controller @Service @Component... -->
+    <context:component-scan base-package="com.gaochao" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"></context:include-filter>
+        <!--<context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"></context:include-filter>-->
+    </context:component-scan>
+
+    <!--<context:annotation-config></context:annotation-config>-->
+    <!--开启mvc注解-->
+    <mvc:annotation-driven/>
+
+    <!--<mvc:default-servlet-handler/>-->
+
+    <!--<mvc:view-controller path="/" view-name="redirect:/index.jsp"/>-->
+
+
+    <!-- 静态资源访问（不拦截此目录下的东西的访问） -->
+    <mvc:resources location="/back_page" mapping="/back_page/**" />
+
+    <!--配置全局转换器-->
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="webBindingInitializer">
+            <bean class="com.gaochao.web.CustomDateEdtor"></bean>
+        </property>
+    </bean>
+
+    <!--配置spring-mvc和支持上传图片-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!--最大上传尺寸 1M-->
+        <property name="maxUploadSize" value="1048000000"></property>
+    </bean>
+
+
+    <!--<mvc:interceptors>-->
+    <!--<mvc:interceptor>-->
+    <!--<mvc:mapping path="/**"/>-->
+    <!--<bean class="com.gaochao.interceptor.SpringmvcInterceptor"></bean>-->
+    <!--</mvc:interceptor>-->
+    <!--</mvc:interceptors>-->
+
+    <import resource="config/property.xml"></import>
+    <!--适配器-->
+    <bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter"></bean>
+    <!--视图 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/back_page/"></property>
+        <property name="suffix" value=".html"></property>
+        <property name="order" value="1"></property>
+    </bean>
+    <!-- 配置freeMarker视图解析器 -->
+    <bean id="freeMarkerViewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.freemarker.FreeMarkerView"/>
+        <property name="contentType" value="text/html; charset=utf-8"/>
+        <property name="cache" value="false" />
+        <property name="suffix" value=".html" />
+        <property name="order" value="0"/>
+        <property name="requestContextAttribute" value="request" />
+    </bean>
+
+    <!-- Freemarker配置 -->
+    <bean id="freemarkerConfig"
+          class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
+        <property name="templateLoaderPath" value="/WEB-INF/back_page/" />
+        <property name="freemarkerSettings">
+            <props>
+                <prop key="template_update_delay">0</prop>
+                <prop key="default_encoding">UTF-8</prop>
+                <prop key="number_format">0.##########</prop>
+                <prop key="datetime_format">yyyy-MM-dd HH:mm:ss</prop>
+                <prop key="classic_compatible">true</prop>
+                <prop key="template_exception_handler">ignore</prop>
+            </props>
+        </property>
+    </bean>
+
+
+    <!--开启aop-->
+    <aop:config proxy-target-class="true"></aop:config>
+
 </beans>

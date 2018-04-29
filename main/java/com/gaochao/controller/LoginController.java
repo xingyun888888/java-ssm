@@ -69,6 +69,7 @@ public class LoginController {
              UsernamePasswordToken token = new UsernamePasswordToken(name,password);
               subject = SecurityUtils.getSubject();
              try {
+                 token.setRememberMe(true);
                  subject.login(token);
              }catch(AuthenticationException e){
                  map.put("error",e.getMessage());
