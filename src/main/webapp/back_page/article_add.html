@@ -85,9 +85,31 @@
 
     <script>
         $(document).ready(function () {
+            function sendFile(file,editor,$editable) {
+                data = new FormData();
+                data.append("file", file);
+                console.log(data);
+                $.ajax({
+                    data: data,
+                    type: "POST",
+                    url: "/admin/upload_img.action",
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function(url) {
+                        console.log(url);
+                        console.log($editable);
+                        console.dir(editor);
+                        editor.insertImage(url);
+                         $('.click2edit').summernote(editor.insertImage,url);
+                    }
+                });
+            }
             $('.click2edit').summernote({
-                focus:true
-            });
+                    onImageUpload: function(files,editor,$editable) {
+                        sendFile(files[0],editor,$editable);
+                    }
+            })
             $("#save-content").click(function(){
                 $.ajax({
                     url:"/admin/add_article.action",

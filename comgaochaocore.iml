@@ -196,5 +196,6 @@
     <orderEntry type="library" name="Maven: org.apache.shiro:shiro-spring:1.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.apache.shiro:shiro-web:1.4.0" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.8.9" level="project" />
+    <orderEntry type="library" name="Maven: org.csource:fastdfs-client-java:1.27-SNAPSHOT" level="project" />
   </component>
 </module>

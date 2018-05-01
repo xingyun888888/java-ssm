@@ -5,9 +5,9 @@
 
    <select id="getList" parameterType="java.lang.String" resultType="article">
      SELECT * FROM article
-     <where>
-         author = #{author}
-     </where>
+     <!--<where>-->
+         <!--author = #{author}-->
+     <!--</where>-->
    </select>
 
 

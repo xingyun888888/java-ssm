@@ -586,6 +586,13 @@
       <artifactId>aspectjweaver</artifactId>
       <version>1.8.9</version>
     </dependency>
+
+    <dependency>
+      <groupId>org.csource</groupId>
+      <artifactId>fastdfs-client-java</artifactId>
+      <version>1.27-SNAPSHOT</version>
+    </dependency>
+
   </dependencies>
   <build>
     <finalName>com.gaochao.core</finalName>
