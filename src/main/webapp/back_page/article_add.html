@@ -16,7 +16,7 @@
     <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/plugins/summernote/summernote.css" rel="stylesheet">
-    <link href="css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
+    <link href="css/plugins/summernote/summernote-bs4.css" rel="stylesheet">
     <link href="css/style.css?v=4.1.0" rel="stylesheet">
 
 </head>
@@ -97,19 +97,15 @@
                     contentType: false,
                     processData: false,
                     success: function(url) {
-                        console.log(url);
-                        console.log($editable);
-                        console.dir(editor);
-                        editor.insertImage(url);
-                         $('.click2edit').summernote(editor.insertImage,url);
+                        //editor.insertImage(url);
+                         console.log(url);
+                         $('.click2edit').summernote("insertImage","https://"+url,function($image){
+                             $image.css("width","100%");
+                         });
                     }
                 });
             }
-            $('.click2edit').summernote({
-                    onImageUpload: function(files,editor,$editable) {
-                        sendFile(files[0],editor,$editable);
-                    }
-            })
+            edit();
             $("#save-content").click(function(){
                 $.ajax({
                     url:"/admin/add_article.action",
@@ -117,26 +113,32 @@
                     data:{
                         title:$("input[name=title]").val(),
                         summary:$("input[name=summary]").val(),
-                        content:$('.click2edit').code()
+                        content:$('.click2edit').summernote("code")
                     },
                     success:function(res){
                         parent.$("#J_iframe").attr('src',"./article_list.html");
                     }
                 })
             })
+            function edit() {
+                $("#eg").addClass("no-padding");
+                $('.click2edit').summernote({
+                    lang: 'zh-CN',
+                    focus: true,
+                    callbacks:{
+                        onImageUpload: function(files,editor,$editable) {
+                            sendFile(files[0],editor,$editable);
+                        }
+                    }
+                });
+            };
+            function save(){
+                $("#eg").removeClass("no-padding");
+                var aHTML = $('.click2edit').summernote("code"); //save HTML If you need(aHTML: array).
+                $('.click2edit').summernote("destroy");
+            };
         });
-        var edit = function () {
-            $("#eg").addClass("no-padding");
-            $('.click2edit').summernote({
-                lang: 'zh-CN',
-                focus: true
-            });
-        };
-        var save = function () {
-            $("#eg").removeClass("no-padding");
-            var aHTML = $('.click2edit').code(); //save HTML If you need(aHTML: array).
-            $('.click2edit').destroy();
-        };
+
     </script>
 </body>
 </html>

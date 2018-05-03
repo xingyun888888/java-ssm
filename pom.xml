@@ -14,8 +14,8 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven.compiler.source>1.7</maven.compiler.source>
-    <maven.compiler.target>1.7</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
   </properties>
   <dependencies>
 
@@ -596,14 +596,34 @@
   </dependencies>
   <build>
     <finalName>com.gaochao.core</finalName>
+    <resources>
+      <resource>
+        <directory>main/resources</directory>
+      </resource>
+    </resources>
+    <sourceDirectory>main/java</sourceDirectory>
     <plugins>
+      <plugin>
+        <groupId>org.flywaydb</groupId>
+        <artifactId>flyway-maven-plugin</artifactId>
+        <version>5.0.7</version>
+        <configuration>
+          <!--<url>jdbc:mysql://localhost:3306/peipei1</url>-->
+          <url>jdbc:mysql://112.74.186.155:3306/peipei</url>
+          <password>123</password>
+          <user>root</user>
+          <locations>
+            <location>db/migration</location>
+          </locations>
+        </configuration>
+      </plugin>
       <plugin>
         <groupId>org.apache.tomcat.maven</groupId>
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.2</version>
         <configuration>
           <port>8080</port>
-          <path>/gaochaoTest</path>
+          <path>/</path>
           <url>http://112.74.186.155:8080/manager/text</url><!--url为tomcat访问路径-->
           <username>tomcat</username>  <!--之前设置的用户名-->
           <password>tomcat</password>  <!--之前设置的密 -->

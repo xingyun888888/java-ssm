@@ -1,0 +1,1 @@
+insert into user values(null,"smile","283538989cef48f3d7d8a1c1bdf2008f","admin");

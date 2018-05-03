@@ -1,0 +1,1 @@
+CREATE TABLE article (id int primary key auto_increment,title varchar(100),summary varchar(100),content text,author varchar(100),create_time varchar(100),update_time varchar(100));

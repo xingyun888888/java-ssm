@@ -16,7 +16,7 @@
     <link href="css/font-awesome.css?v=4.4.0" rel="stylesheet">
     <link href="css/animate.css" rel="stylesheet">
     <link href="css/plugins/summernote/summernote.css" rel="stylesheet">
-    <link href="css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
+    <link href="css/plugins/summernote/summernote-bs4.css" rel="stylesheet">
     <link href="css/style.css?v=4.1.0" rel="stylesheet">
 
 </head>
@@ -93,7 +93,33 @@
         })(jQuery);
 
         $(document).ready(function () {
-            $(".click2edit").summernote();
+            function sendFile(file,editor,$editable) {
+                data = new FormData();
+                data.append("file", file);
+                console.log(data);
+                $.ajax({
+                    data: data,
+                    type: "POST",
+                    url: "/admin/upload_img.action",
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function(url) {
+                        //editor.insertImage(url);
+                        console.log(url);
+                        $('.click2edit').summernote("insertImage","https://"+url,function($image){
+                            $image.css("width","100%");
+                        });
+                    }
+                });
+            }
+            $(".click2edit").summernote({
+                callbacks:{
+                    onImageUpload: function(files,editor,$editable) {
+                        sendFile(files[0],editor,$editable);
+                    }
+                }
+            });
             $.ajax({
                 url:"/admin/getArticleById.action",
                 type:"GET",
@@ -101,7 +127,7 @@
                     id:$.getUrlParam("id")
                 },
                 success:function(res){
-                    $(".click2edit").code(res.content);
+                    $(".click2edit").summernote("code",res.content);
                     $("input[name=title]").val(res.title);
                     $("input[name=summary]").val(res.summary);
                 }
@@ -116,7 +142,7 @@
                         id:$.getUrlParam("id"),
                         title:$("input[name=title]").val(),
                         summary:$("input[name=summary]").val(),
-                        content:$('.click2edit').code()
+                        content:$('.click2edit').summernote("code")
                     },
                     success:function(res){
                         parent.$("#J_iframe").attr('src',"./article_list.html");
@@ -133,7 +159,7 @@
         };
         var save = function () {
             $("#eg").removeClass("no-padding");
-            var aHTML = $('.click2edit').code(); //save HTML If you need(aHTML: array).
+            var aHTML = $('.click2edit').summernote("code"); //save HTML If you need(aHTML: array).
             $('.click2edit').destroy();
         };
     </script>
