@@ -27,7 +27,26 @@
 
     <!--<context:annotation-config></context:annotation-config>-->
     <!--开启mvc注解-->
-    <mvc:annotation-driven/>
+    <mvc:annotation-driven>
+        <mvc:message-converters register-defaults="false">
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter" />
+            <bean  class="org.springframework.http.converter.ByteArrayHttpMessageConverter" />
+            <bean   class="org.springframework.http.converter.BufferedImageHttpMessageConverter" />
+            <bean class="org.springframework.http.converter.FormHttpMessageConverter"/>
+            <!-- 配置fastjson中实现httpMessageConverter接口的转换器 -->
+            <bean id="fastJsonHttpMessageConverter"
+                  class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter" >
+                <!-- 加入支持的媒体类型：返回contentType -->
+                <property name="supportedMediaTypes">
+                    <list>
+                        <!-- 这里顺序不能写反，一定先写text/html,不然IE会出现下载提示 -->
+                        <value>text/html;charset=UTF-8</value>
+                        <value>application/json;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
 
     <!--<mvc:default-servlet-handler/>-->
 

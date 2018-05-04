@@ -6,10 +6,7 @@ import com.gaochao.util.FastDFSFile;
 import com.gaochao.util.FastDFSUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.ServletContextAware;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.RequestContext;
@@ -87,21 +84,18 @@ public class ArticleController implements ServletContextAware {
      */
     @RequestMapping(value = "getArticleById.action",method = RequestMethod.GET)
     @ResponseBody
-    public Article getArticleById(@RequestParam int id){
+    public Article getArticleById(@RequestParam(name = "id") int id){
          return articleService.getArticleById(id);
     }
 
 
     /**
      * 添加文章
-     * @param title
-     * @param summary
-     * @param content
      */
     @RequestMapping(value="add_article.action",method = RequestMethod.POST)
     @ResponseBody
-    public void add(@RequestParam String title,@RequestParam String summary,@RequestParam String content){
-        articleService.add(title,summary,content);
+    public void add(@RequestBody Article article){
+        articleService.add(article);
     }
 
 
@@ -111,9 +105,9 @@ public class ArticleController implements ServletContextAware {
        articleService.updateArticle(article);
     }
 
-    @RequestMapping(value = "/deleteArticleById.action",method = RequestMethod.POST)
+    @RequestMapping(value="/deleteArticleById.action",method = RequestMethod.POST)
     @ResponseBody
-    public void deleteById(@RequestParam int id){
+    public void deleteById(@RequestParam(name="id") int id){
         articleService.deleteById(id);
     }
 

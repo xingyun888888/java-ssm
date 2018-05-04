@@ -29,6 +29,7 @@
 /Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/interceptor/SpringmvcInterceptor.java
 /Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/exception/GlobalExceptionHandler.java
 /Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/shiro/session/RedisSessionDao.java
+/Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/migrate/FlywayMigration.java
 /Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/bean/Article.java
 /Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/bean/Camera.java
 /Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/controller/UploadController.java

@@ -20,6 +20,7 @@ com/gaochao/bean/Camera.class
 com/gaochao/common/Md5Pwd.class
 com/gaochao/util/JedisUtil.class
 com/gaochao/web/session/SessionProvider.class
+com/gaochao/migrate/FlywayMigration.class
 com/gaochao/common/Md5PwdImpl.class
 com/gaochao/shiro/filter/RolesOrFilter.class
 com/gaochao/test/JedisClusterDemo.class

@@ -12,6 +12,7 @@ import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -56,13 +57,15 @@ public class LoginController {
 
     @RequestMapping(value="/login.do",method = RequestMethod.POST)
     @ResponseBody
-    public Map index(HttpServletRequest request, @RequestParam(required = false) String name,@RequestParam(required = false) String password){
+    public Map index(HttpServletRequest request, @RequestParam(value = "name") String name,@RequestParam(value = "password") String password){
          System.out.println(mapWired.get("brandServceImpl").getPath("static"));
+
 
          Map map = new HashMap();
 
          Subject subject = null;
-
+         System.out.println(name);
+         System.out.println(password);
          if(name!=null&&password!=null){
              user = new User(name,md5Pwd.encode(password));
              httpSessionProvider.setAttribute(request,"user",user);

@@ -29,6 +29,7 @@
             /login.do = anon
             /control/index.do = user
             /admin/** = anon
+            /back_page/** = anon
             /** = authc
          </value>
       </property>

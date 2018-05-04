@@ -11,7 +11,7 @@ import java.util.Map;
  */
 @Repository
 public interface ArticleDao{
-    int add(Map map);
+    int add(Article article);
     Article getArticleById(int id);
     List<Article> getList(String author);
     void updateArticle(Article article);

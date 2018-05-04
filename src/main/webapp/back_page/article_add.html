@@ -110,11 +110,12 @@
                 $.ajax({
                     url:"/admin/add_article.action",
                     type:"POST",
-                    data:{
+                    data:JSON.stringify({
                         title:$("input[name=title]").val(),
                         summary:$("input[name=summary]").val(),
                         content:$('.click2edit').summernote("code")
-                    },
+                    }),
+                    contentType:"application/json;charset=utf-8",
                     success:function(res){
                         parent.$("#J_iframe").attr('src',"./article_list.html");
                     }

@@ -48,12 +48,9 @@ public class ArticleServiceImpl {
 
     /**
      * 添加文章
-     * @param title
-     * @param summary
-     * @param content
      * @return
      */
-    public int add(String title,String summary,String content){
+    public int add(Article article){
 
        System.out.println(SecurityUtils.getSubject().getPrincipal());
 
@@ -64,17 +61,11 @@ public class ArticleServiceImpl {
        String create_time = sdf.format(new Date());
 
        String update_time = create_time;
+       article.setAuthor(author);
+       article.setCreate_time(create_time);
+       article.setUpdate_time(update_time);
 
-       Map map = new HashMap<>();
-
-       map.put("title",title);
-       map.put("summary",summary);
-       map.put("content",content);
-       map.put("author",author);
-       map.put("create_time",create_time);
-       map.put("update_time",create_time);
-
-       return articleDao.add(map);
+       return articleDao.add(article);
     }
 
 

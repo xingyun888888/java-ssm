@@ -81,12 +81,12 @@
             $.ajax({
                 url:"/admin/get_article_list.action",
                 type:"GET",
-                contentType:"json",
+                dataType:"json",
                 success:function(res){
-                    var html = html;
+                    var html = "";
+                    console.dir(res);
                     res.data && res.data.map(function(item,index){
-                        html += `
-                                   <tr>
+                        html += `<tr>
                                         <td>
                                             <input type="checkbox" class="i-checks" name="input[]">
                                         </td>
@@ -96,12 +96,13 @@
                                         <td>${item.author}</td>
                                         <td>${item.update_time}</td>
                                         <td>
-                                            <a href="article_editors.html?id=${item.id}">查看</a>
+                                            <a href="./article_editors.html?id=${item.id}">查看</a>
                                             <a onclick="deleteArticle(event,${item.id})" href="javascript:void(0)">删除</a>
                                         </td>
                                     </tr>
                                  `
                     })
+                    console.log(html);
                     $("table tbody").html(html);
                 }
             })

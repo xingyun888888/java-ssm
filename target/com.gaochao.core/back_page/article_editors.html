@@ -123,8 +123,9 @@
             $.ajax({
                 url:"/admin/getArticleById.action",
                 type:"GET",
+                dataType:"json",
                 data:{
-                    id:$.getUrlParam("id")
+                   id:$.getUrlParam("id")
                 },
                 success:function(res){
                     $(".click2edit").summernote("code",res.content);
@@ -138,12 +139,14 @@
                 $.ajax({
                     url:"/admin/updateArticle.action",
                     type:"POST",
-                    data:{
-                        id:$.getUrlParam("id"),
+                    contentType:"application/json;charset=utf-8",
+                    data:JSON.stringify({
+                        id: $.getUrlParam("id"),
                         title:$("input[name=title]").val(),
                         summary:$("input[name=summary]").val(),
                         content:$('.click2edit').summernote("code")
-                    },
+                    }),
+                    processData:false,
                     success:function(res){
                         parent.$("#J_iframe").attr('src',"./article_list.html");
                     }
