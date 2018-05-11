@@ -1,0 +1,17 @@
+2018-05-08 15:56:04,063-[Xface] org.apache.activemq.transport.failover.FailoverTransport.doReconnect(FailoverTransport.java:691) INFO ActiveMQ Task - Successfully connected to tcp://47.106.81.10:61616
+2018-05-08 16:03:58,938-[Xface] org.apache.activemq.transport.failover.FailoverTransport.doReconnect(FailoverTransport.java:691) INFO ActiveMQ Task - Successfully connected to tcp://47.106.81.10:61616
+2018-05-08 16:07:22,282-[Xface] org.apache.activemq.transport.failover.FailoverTransport.doReconnect(FailoverTransport.java:691) INFO ActiveMQ Task - Successfully connected to tcp://47.106.81.10:61616
+2018-05-08 16:07:26,481-[Xface] org.apache.activemq.transport.failover.FailoverTransport.doReconnect(FailoverTransport.java:691) INFO ActiveMQ Task - Successfully connected to tcp://47.106.81.10:61616
+2018-05-08 16:07:37,441-[Xface] org.apache.activemq.transport.failover.FailoverTransport.doReconnect(FailoverTransport.java:691) INFO ActiveMQ Task - Successfully connected to tcp://47.106.81.10:61616
+2018-05-08 16:07:55,150-[Xface] org.apache.activemq.transport.failover.FailoverTransport.doReconnect(FailoverTransport.java:691) INFO ActiveMQ Task - Successfully connected to tcp://47.106.81.10:61616
+2018-05-08 16:08:51,229-[Xface] org.apache.activemq.transport.failover.FailoverTransport.doReconnect(FailoverTransport.java:691) INFO ActiveMQ Task - Successfully connected to tcp://47.106.81.10:61616
+2018-05-08 16:11:05,064-[Xface] org.apache.activemq.transport.failover.FailoverTransport.doReconnect(FailoverTransport.java:691) INFO ActiveMQ Task - Successfully connected to tcp://47.106.81.10:61616
+2018-05-08 16:11:36,543-[Xface] org.apache.activemq.transport.failover.FailoverTransport.doReconnect(FailoverTransport.java:691) INFO ActiveMQ Task - Successfully connected to tcp://47.106.81.10:61616
+2018-05-08 16:11:52,530-[Xface] org.apache.activemq.transport.failover.FailoverTransport.doReconnect(FailoverTransport.java:691) INFO ActiveMQ Task - Successfully connected to tcp://47.106.81.10:61616
+2018-05-08 16:12:45,301-[Xface] org.apache.activemq.transport.failover.FailoverTransport.doReconnect(FailoverTransport.java:691) INFO ActiveMQ Task - Successfully connected to tcp://47.106.81.10:61616
+2018-05-08 16:12:52,337-[Xface] org.apache.activemq.transport.failover.FailoverTransport.doReconnect(FailoverTransport.java:691) INFO ActiveMQ Task - Successfully connected to tcp://47.106.81.10:61616
+2018-05-08 16:13:41,230-[Xface] org.apache.activemq.transport.failover.FailoverTransport.doReconnect(FailoverTransport.java:691) INFO ActiveMQ Task - Successfully connected to tcp://47.106.81.10:61616
+2018-05-08 16:13:55,158-[Xface] org.apache.activemq.transport.failover.FailoverTransport.doReconnect(FailoverTransport.java:691) INFO ActiveMQ Task - Successfully connected to tcp://47.106.81.10:61616
+2018-05-08 16:22:32,639-[Xface] org.apache.activemq.transport.failover.FailoverTransport.doReconnect(FailoverTransport.java:691) INFO ActiveMQ Task - Successfully connected to tcp://47.106.81.10:61616
+2018-05-08 16:22:45,534-[Xface] org.apache.activemq.transport.failover.FailoverTransport.doReconnect(FailoverTransport.java:691) INFO ActiveMQ Task - Successfully connected to tcp://47.106.81.10:61616
+2018-05-08 16:22:57,264-[Xface] org.apache.activemq.transport.failover.FailoverTransport.doReconnect(FailoverTransport.java:691) INFO ActiveMQ Task - Successfully connected to tcp://47.106.81.10:61616

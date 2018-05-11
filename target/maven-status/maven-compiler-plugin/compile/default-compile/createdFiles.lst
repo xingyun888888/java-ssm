@@ -4,9 +4,11 @@ com/gaochao/service/BrandService.class
 com/gaochao/bean/Article.class
 com/gaochao/bean/User.class
 com/gaochao/service/ArticleServiceImpl.class
+com/gaochao/test/JMSProducer.class
 com/gaochao/dao/CameraDao.class
 com/gaochao/controller/LoginController.class
 com/gaochao/shiro/realm/CustomRealm.class
+com/gaochao/test/ActiveMqTest.class
 com/gaochao/web/CustomDateEdtor.class
 com/gaochao/bean/Analyser.class
 com/gaochao/shiro/session/RedisSessionDao.class
@@ -14,8 +16,10 @@ com/gaochao/test/Child.class
 com/gaochao/controller/ProductController.class
 com/gaochao/test/IniRealmTest.class
 com/gaochao/test/FreemarkerDemo.class
+com/gaochao/test/WebAppContextWithWarServerTest.class
 com/gaochao/shiro/session/CustomSessionManager.class
 com/gaochao/redis/RedisCache.class
+com/gaochao/test/JMSConsumer1.class
 com/gaochao/bean/Camera.class
 com/gaochao/common/Md5Pwd.class
 com/gaochao/util/JedisUtil.class
@@ -26,9 +30,11 @@ com/gaochao/shiro/filter/RolesOrFilter.class
 com/gaochao/test/JedisClusterDemo.class
 com/gaochao/controller/TestClient.class
 com/gaochao/test/AuthticationTest.class
+com/gaochao/test/JMSConsumer2.class
 com/gaochao/service/CameraServiceImpl.class
 com/gaochao/util/FastDFSUtil.class
 com/gaochao/dao/ArticleDao.class
+com/gaochao/test/MyArrayList.class
 com/gaochao/util/BSUtil.class
 com/gaochao/interceptor/SpringmvcInterceptor.class
 com/gaochao/util/FastDFSFile.class
@@ -41,6 +47,9 @@ com/gaochao/async/job/TestPrint.class
 com/gaochao/controller/CenterController.class
 com/gaochao/test/Parent.class
 com/gaochao/controller/admin/ArticleController.class
+com/gaochao/test/MailTest.class
 com/gaochao/web/session/HttpSessionProvider.class
 com/gaochao/controller/UploadController.class
 com/gaochao/exception/BusinessException.class
+com/gaochao/test/JMSConsumer.class
+com/gaochao/Bootstrap.class
