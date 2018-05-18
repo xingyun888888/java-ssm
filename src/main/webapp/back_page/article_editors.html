@@ -141,7 +141,7 @@
                     type:"POST",
                     contentType:"application/json;charset=utf-8",
                     data:JSON.stringify({
-                        id: $.getUrlParam("id"),
+                        id: +$.getUrlParam("id"),
                         title:$("input[name=title]").val(),
                         summary:$("input[name=summary]").val(),
                         content:$('.click2edit').summernote("code")
@@ -163,7 +163,7 @@
         var save = function () {
             $("#eg").removeClass("no-padding");
             var aHTML = $('.click2edit').summernote("code"); //save HTML If you need(aHTML: array).
-            $('.click2edit').destroy();
+            $('.click2edit').summernote("destroy");
         };
     </script>
 

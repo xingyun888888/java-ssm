@@ -17,7 +17,7 @@ import java.util.Map;
  */
 
 @Service
-public class ArticleServiceImpl {
+public class ArticleServiceImpl implements ArticleService{
 
     @Autowired
     private ArticleDao articleDao;

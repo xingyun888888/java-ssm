@@ -27,6 +27,7 @@
          <list>
             <!--jdbc配置-->
            <value>classpath:properties/jdbc.properties</value>
+           <value>classpath:properties/dubbo.properties</value>
            <value>classpath:properties/file.properties</value>
            <!--memcache配置-->
              <!--redis配置-->

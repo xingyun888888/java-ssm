@@ -23,7 +23,9 @@ public class FastDFSUtil implements Serializable{
         try {
             //clientGloble读配置文件
             ClassPathResource resource = new ClassPathResource("fdfs_client.conf");
-            ClientGlobal.init(resource.getClassLoader().getResource("fdfs_client.conf").getPath());
+            String path = new ClassPathResource("fdfs_client.conf").getPath();
+            ClientGlobal.init(path);
+            //ClientGlobal.init(resource.getClassLoader().getResource("fdfs_client.conf").getPath());
             //trackerclient
             trackerClient = new TrackerClient();
             trackerServer = trackerClient.getConnection();

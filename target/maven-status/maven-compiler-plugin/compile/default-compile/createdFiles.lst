@@ -37,9 +37,11 @@ com/gaochao/dao/ArticleDao.class
 com/gaochao/test/MyArrayList.class
 com/gaochao/util/BSUtil.class
 com/gaochao/interceptor/SpringmvcInterceptor.class
+com/gaochao/test/MapayTest.class
 com/gaochao/util/FastDFSFile.class
 com/gaochao/service/BrandServceImpl.class
 com/gaochao/bean/Brand.class
+Bootstrap.class
 com/gaochao/dao/BrandDao.class
 com/gaochao/redis/RedisCacheManager.class
 com/gaochao/test/JdbcRealmTest.class
@@ -52,4 +54,3 @@ com/gaochao/web/session/HttpSessionProvider.class
 com/gaochao/controller/UploadController.class
 com/gaochao/exception/BusinessException.class
 com/gaochao/test/JMSConsumer.class
-com/gaochao/Bootstrap.class

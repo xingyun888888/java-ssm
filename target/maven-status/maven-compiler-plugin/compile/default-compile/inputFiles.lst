@@ -10,6 +10,7 @@
 /Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/bean/Brand.java
 /Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/async/job/TestPrint.java
 /Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/controller/LoginController.java
+/Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/test/MapayTest.java
 /Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/test/Parent.java
 /Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/exception/GlobalExceptionHandler.java
 /Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/shiro/session/RedisSessionDao.java
@@ -22,6 +23,7 @@
 /Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/controller/CenterController.java
 /Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/common/Md5PwdImpl.java
 /Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/test/JMSConsumer.java
+/Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/Bootstrap.java
 /Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/dao/UserDao.java
 /Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/test/AuthticationTest.java
 /Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/test/IniRealmTest.java
@@ -51,5 +53,4 @@
 /Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/exception/BusinessException.java
 /Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/bean/Analyser.java
 /Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/web/session/SessionProvider.java
-/Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/Bootstrap.java
 /Users/zhimaiMAC/Desktop/web/comgaochaocore/main/java/com/gaochao/test/JMSConsumer2.java
